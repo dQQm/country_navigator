@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .directive('hi', hi)
+        .directive('countrieView', countrieView)
         .config(config);
 
     config.$inject = ['$stateProvider'];
@@ -17,7 +17,7 @@
 
     function countrieView() {
         var directive = {
-            templateUrl: './states//countrie-view.html',
+            templateUrl: './states/countrie-view/countrie-view.html',
             restrict: 'E',
             controller: controller,
             scope: {}
@@ -26,8 +26,10 @@
         return directive;
     }
 
-    controller.$inject = ['$scope', ];
-    function controller($scope, survey) {
+    controller.$inject = ['$scope','countriesInfo' ];
+    function controller($scope, countriesInfo) {
+        $scope.countries = countriesInfo.data;
+        console.log(countriesInfo.data);
 
     }
 
