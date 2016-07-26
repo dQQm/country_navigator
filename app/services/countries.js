@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .factory('countrieInfo', service);
+        .factory('countriesInfo', countriesInfo);
 
-    service.$inject = ['$http'];
+    countriesInfo.$inject = ['$http'];
 
     function countriesInfo($http) {
         return {
