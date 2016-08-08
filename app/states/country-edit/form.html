@@ -11,20 +11,41 @@
 <body>
 
 <div class="container">
-  <h2>Vertical (basic) form</h2>
-  <form name="form">
+<h2>Add/Edit country</h2>
+    <form name="form">
     <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    <label name="country-name">Name of the country:</label>
+    <input type="text" class="form-control" placeholder="Enter country name">
     </div>
     <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email">
+      <label name="capital">Capital of the country:</label>
+      <input type="text" class="form-control" placeholder="Enter capital name">
     </div>
     <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+      <label name="flagUrl">Flag of the country:</label>
+      <input type="url" class="form-control" placeholder="Entre URL">
     </div>
+    <div class="form-group">
+      <label name="language">Language:</label>
+      <input type="text" class="form-control" placeholder="Enter language">
+    </div>
+    <div class="form-group">
+      <label name="population">Population:</label>
+      <input type="number" class="form-control" placeholder="Enter number of population">
+    </div>
+    <div class="form-group">
+      <label name="size">Size:</label>
+      <input type="number" class="form-control" placeholder="Enter size of country">
+    </div>
+      <div class="form-group">
+      <label name="description">Description:</label>
+      <input type="text" class="form-control" placeholder="Enter a description">
+    </div>
+      <div class="form-group">
+      <label name="recommendations">Recommendations:</label>
+      <input type="text" class="form-control" placeholder="Enter recommendations">
+    </div>
+
     <button type="submit" class="btn btn-default">Submit</button>
   </form>
 </div>
