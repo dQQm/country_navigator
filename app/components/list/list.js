@@ -17,9 +17,7 @@
     }
 
     controller.$inject = ['$scope', 'countriesInfo','columns' ,'rows','conf'];
-    function controller($scope, countriesInfo,columns ,rows,conf) {
-       $scope.rows = countriesInfo.data;
-       $scope.columns = Object.keys($scope.rows[0]);
+    function controller($scope, conf) {
     }
 
 }(angular));
