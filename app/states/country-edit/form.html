@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
@@ -14,27 +15,32 @@
 <h2>Add/Edit country</h2>
     <form name="form">
     <div class="form-group">
-    <label name="country-name">Name of the country:</label>
-    <input type="text" class="form-control" placeholder="Enter country name">
+    <label name="country-name">Name of the country<span>*</span>:</label>
+    <input type="text" class="form-control" placeholder="Enter country name" required>
     </div>
     <div class="form-group">
-      <label name="capital">Capital of the country:</label>
-      <input type="text" class="form-control" placeholder="Enter capital name">
+      <label name="capital">Capital of the country<span>*</span>:</label>
+      <input type="text" class="form-control" placeholder="Enter capital name" required>
     </div>
     <div class="form-group">
-      <label name="flagUrl">Flag of the country:</label>
-      <input type="url" class="form-control" placeholder="Entre URL">
+      <label name="flagUrl">Flag of the country<span>*</span>:</label>
+      <input type="url" class="form-control" placeholder="Enter URL" required>
     </div>
     <div class="form-group">
       <label name="language">Language:</label>
       <input type="text" class="form-control" placeholder="Enter language">
     </div>
+     <div class="form-group">
+      <label name="currency">Currency:</label>
+      <input type="text" class="form-control" placeholder="Enter currency" min="1">
+    </div>
+
     <div class="form-group">
       <label name="population">Population:</label>
       <input type="number" class="form-control" placeholder="Enter number of population">
     </div>
     <div class="form-group">
-      <label name="size">Size:</label>
+      <label name="size">Size (km²):</label>
       <input type="number" class="form-control" placeholder="Enter size of country">
     </div>
       <div class="form-group">
