@@ -11,7 +11,7 @@
         $stateProvider
             .state('countries', {
                 url: '/countries',
-                templateUrl: './states/countries/countries.html'
+                template: '<countries></countries>'
             });
     }
 
@@ -28,8 +28,8 @@
         return directive;
     }
 
-    controller.$inject = ['$scope', 'countriesInfo', 'rows', 'columns'];
-    function controller($scope, countriesInfo, rows, columns) {
+    controller.$inject = ['$scope', 'countriesInfo'];
+    function controller($scope, countriesInfo) {
         $scope.rows = countriesInfo.data;
         $scope.columns = Object.keys($scope.rows[0]);
     }
