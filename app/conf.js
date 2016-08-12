@@ -28,7 +28,7 @@
                 {label: 'FAQ', state: 'faq'}, 
                 {label: 'TERMS AND CONDITIONS', state: 'terms'}, 
                 {label: 'ABOUT US', state: 'about'}, 
-                {label: 'CONTACT US', state: 'contact'},
+                {label: 'CONTACT US', state: 'hi    '},
                 {label: 'COUNTRIES', state: 'countries'}
             ],
             get: get(),

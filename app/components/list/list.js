@@ -10,14 +10,18 @@
             templateUrl: './components/list/list.html',
             restrict: 'E',
             controller: controller,
-            scope: {}
+            scope: {
+                rows: '=',
+                columns: '='
+            }
         };
 
         return directive;
     }
 
-    controller.$inject = ['$scope', 'countriesInfo','columns' ,'rows','conf'];
+    controller.$inject = ['$scope','conf'];
     function controller($scope, conf) {
+        console.log($scope.conf);
     }
 
 }(angular));
