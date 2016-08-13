@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
 </head>
 <body>
 
@@ -15,16 +15,20 @@
 <h2>Add/Edit country</h2>
     <form name="form">
     <div class="form-group">
-    <label name="country-name">Name of the country<span>*</span>:</label>
-    <input type="text" class="form-control" placeholder="Enter country name" required>
+    <label name="country">Name of the country<span>*</span>:</label>
+    <input type="text" name="countryName" ng-model="countryName" class="form-control" id="counrtry" placeholder="Enter country name" required>
+    <span ng-show="form.countryName.$touched"></span>
     </div>
-    <div class="form-group">
-      <label name="capital">Capital of the country<span>*</span>:</label>
-      <input type="text" class="form-control" placeholder="Enter capital name" required>
+    <span ng-show="form.countryName.$touched && form.countryName.$invalid">Please, enter country name!</span>
+      <div class="form-group">
+      <label name="capitalName">Capital of the country<span>*</span>:</label>
+      <input type="text" name="capitalName" class="form-control" ng-model="capitaName" placeholder="Enter capital name" required>
     </div>
+     <span ng-show="form.capitalName.$touched && form.capitalName.$invalid">Please, enter capital name!</span>
     <div class="form-group">
       <label name="flagUrl">Flag of the country<span>*</span>:</label>
-      <input type="url" class="form-control" placeholder="Enter URL" required>
+      <input type="url" name="flagUrl" ng-model="flagUrl" class="form-control" placeholder="Enter URL" required>
+      <span ng-show="form.flagUrl.$touched && form.flagUrl.$invalid">Please, enter valid URL!</span>
     </div>
     <div class="form-group">
       <label name="language">Language:</label>
@@ -51,7 +55,6 @@
       <label name="recommendations">Recommendations:</label>
       <input type="text" class="form-control" placeholder="Enter recommendations">
     </div>
-
     <button type="submit" class="btn btn-default">Submit</button>
   </form>
 </div>
