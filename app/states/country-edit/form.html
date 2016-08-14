@@ -16,18 +16,18 @@
     <form name="form">
     <div class="form-group">
     <label name="country">Name of the country<span>*</span>:</label>
-    <input type="text" name="countryName" ng-model="countryName" class="form-control" id="counrtry" placeholder="Enter country name" required>
-    <span ng-show="form.countryName.$touched"></span>
-    </div>
-    <span ng-show="form.countryName.$touched && form.countryName.$invalid">Please, enter country name!</span>
+    <input type="text" name="countryName" ng-model="countryName" class="form-control" id="country" ng-pattern="/^[a-zA-Z0-9- ]*$/" placeholder="Enter country name" required>
+    <span ng-show="form.countryName.$touched && form.countryName.$invalid">Please, enter country name.</span>
+    <span ng-show="form.countryName.$error.pattern">No special symbols allowed!</span>
       <div class="form-group">
       <label name="capitalName">Capital of the country<span>*</span>:</label>
-      <input type="text" name="capitalName" class="form-control" ng-model="capitaName" placeholder="Enter capital name" required>
+      <input type="text" name="capitalName" class="form-control" ng-model="capitaName" id="capital" placeholder="Enter capital name" ng-pattern="/^[a-zA-Z0-9- ]*$/" required>
     </div>
-     <span ng-show="form.capitalName.$touched && form.capitalName.$invalid">Please, enter capital name!</span>
+     <span ng-show="form.capitalName.$touched && form.capitalName.$invalid">Please, enter capital name.</span>
+     <span ng-show="form.capitalName.$error.pattern">No special symbols allowed!</span>
     <div class="form-group">
       <label name="flagUrl">Flag of the country<span>*</span>:</label>
-      <input type="url" name="flagUrl" ng-model="flagUrl" class="form-control" placeholder="Enter URL" required>
+      <input type="url" name="flagUrl" ng-model="flagUrl" class="form-control" ng-pattern="https?://.+" id="url" placeholder="Enter URL" required>
       <span ng-show="form.flagUrl.$touched && form.flagUrl.$invalid">Please, enter valid URL!</span>
     </div>
     <div class="form-group">
@@ -36,16 +36,19 @@
     </div>
      <div class="form-group">
       <label name="currency">Currency:</label>
-      <input type="text" class="form-control" placeholder="Enter currency" min="1">
+      <input type="number" class="form-control" name="currency" ng-model="currency" placeholder="Enter currency" min="1">
+      <span ng-show="form.currency.$invalid">Invalid information!</span>
     </div>
 
     <div class="form-group">
       <label name="population">Population:</label>
-      <input type="number" class="form-control" placeholder="Enter number of population">
+      <input type="number" name="population" ng-model="population" class="form-control" min="1" placeholder="Enter number of population">
+      <span ng-show="form.population.$invalid">Invalid information!</span>
     </div>
     <div class="form-group">
       <label name="size">Size (km²):</label>
-      <input type="number" class="form-control" placeholder="Enter size of country">
+      <input type="number" name="size" ng-model="size" class="form-control" min="1" placeholder="Enter size of country">
+      <span ng-show="form.size.$invalid">Invalid information!</span>
     </div>
       <div class="form-group">
       <label name="description">Description:</label>
