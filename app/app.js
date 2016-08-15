@@ -8,7 +8,8 @@
         'angular.chosen',
         'ngMockE2E',
         'datatables',
-        'backand'
+        'backand',
+        'ngMessages'
     ])
     .config(config)
     .run(run);
