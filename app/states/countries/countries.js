@@ -19,18 +19,17 @@
         var directive = {
             templateUrl: './states/countries/countries.html',
             restrict: 'E',
-            controller: controller,
-            scope: {
-                name: '='
-            }
+            controller: controller
         };
 
         return directive;
     }
 
-    controller.$inject = ['$scope'];
-    function controller($scope) {
-       
+    controller.$inject = ['$scope','countriesInfo'];
+    function controller($scope, countriesInfo) {
+        $scope.rows = countriesInfo.data;
+        $scope.columns = Object.keys($scope.rows[0]);
+        $scope.titles = countriesInfo.columns;
     }
 
 } (angular));
