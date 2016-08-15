@@ -16,12 +16,12 @@
     <form name="form">
     <div class="form-group">
     <label name="country">Name of the country<span>*</span>:</label>
-    <input type="text" name="countryName" ng-model="countryName" class="form-control" id="country" ng-pattern="/^[a-zA-Z0-9- ]*$/" placeholder="Enter country name" required>
+    <input type="text" name="countryName" ng-model="countryName" class="form-control" id="country" ng-pattern='/^[a-zA-Z0-9-" ]*$/' placeholder="Enter country name" required>
     <span ng-show="form.countryName.$touched && form.countryName.$invalid">Please, enter country name.</span>
     <span ng-show="form.countryName.$error.pattern">No special symbols allowed!</span>
       <div class="form-group">
       <label name="capitalName">Capital of the country<span>*</span>:</label>
-      <input type="text" name="capitalName" class="form-control" ng-model="capitaName" id="capital" placeholder="Enter capital name" ng-pattern="/^[a-zA-Z0-9- ]*$/" required>
+      <input type="text" name="capitalName" class="form-control" ng-model="capitaName" id="capital" placeholder="Enter capital name" ng-pattern='/^[a-zA-Z0-9-" ]*$/' required>
     </div>
      <span ng-show="form.capitalName.$touched && form.capitalName.$invalid">Please, enter capital name.</span>
      <span ng-show="form.capitalName.$error.pattern">No special symbols allowed!</span>
@@ -52,11 +52,13 @@
     </div>
       <div class="form-group">
       <label name="description">Description:</label>
-      <input type="text" class="form-control" placeholder="Enter a description">
+      <input type="text" class="form-control" name="description" ng-pattern='/^[a-zA-Z0-9-" ]*$/' ng-model="descr" placeholder="Enter a description">
+      <span ng-show="form.description.$error.pattern">No special symbols allowed!</span>
     </div>
       <div class="form-group">
       <label name="recommendations">Recommendations:</label>
-      <input type="text" class="form-control" placeholder="Enter recommendations">
+      <input type="text" class="form-control" name="recommendations" ng-model="recom" ng-pattern='/^[a-zA-Z0-9-" ]*$/' placeholder="Enter recommendations">
+      <span ng-show="form.recommendations.$error.pattern">No special symbols allowed!</span>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
   </form>
