@@ -30,6 +30,7 @@
 
     controller.$inject = ['$scope', 'survey'];
     function controller($scope, survey) {
-       }
+
+    }
 
 }(angular));

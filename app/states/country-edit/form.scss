@@ -1,11 +1,16 @@
 form-state {
-	span {
+	p {
 		color: red;
 	}
 
-	input.ng-invalid {
+	input.ng-invalid, input.input-invalid {
 		border-color: red;
 		background-color: #ffffcc;
+	}
+
+	input.input-invalid {
+		border-color: red !important;
+		background-color: #ffffcc !important;
 	}
 
 	input.ng-valid {
@@ -16,4 +21,9 @@ form-state {
 		border-color: lightgrey;
 		background-color: white;
 	}
+
 }
+
+
+
+
