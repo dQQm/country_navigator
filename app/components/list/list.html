@@ -1,16 +1,22 @@
 <div class="container-list">
     <h2>Countries Table</h2>
     <p>List of countries and their capitals and usefull information</p>
-    <table class="table table-bordered">
+    <table class="table table-striped table-condensed table-hover">
         <thead>
             <tr>
                 <th ng-repeat="column in columns">{{column}}</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="row in rows">
+            <tr ng-repeat="row in filteredData">
                 <td ng-repeat="column in columns">{{row[column]}}</td>
             </tr>
         </tbody>
+        <tfoot>
+            <td colspan="6">
+                <ul uib-pagination boundary-links="true" max-size="3" items-per-page="pageLenght" total-items="rows.length" ng-model="currPage"
+                    ng-change="pageChanged()"></ul>
+            </td>
+        </tfoot>
     </table>
 </div>

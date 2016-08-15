@@ -28,10 +28,9 @@
         return directive;
     }
 
-    controller.$inject = ['$scope', 'countriesInfo'];
-    function controller($scope, countriesInfo) {
-        $scope.rows = countriesInfo.data;
-        $scope.columns = Object.keys($scope.rows[0]);
+    controller.$inject = ['$scope'];
+    function controller($scope) {
+       
     }
 
 } (angular));
