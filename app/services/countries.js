@@ -129,7 +129,35 @@
                 "size": "10000 10000",
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
-            }]
+            }],columns : [{
+                "title": "Country",
+                "type": "string"
+              }, {
+                "title": "Capital",
+                "type": "string"
+              }, {
+                "title": "Flag",
+                "type": "string"
+              }, {
+                "title": "Language",
+                "type": "string"
+              }, {
+                "title": "Currency",
+                "type": "string"
+              }, {
+                "title": "Population",
+                "type": "string"
+              }, {
+                "title": "Size",
+                "type": "string"
+              }, {
+                "title": "Description",
+                "type": "string"
+              }, {
+                "title": "Recomendations",
+                "type": "string"
+              }]
+            
         };
     }
 

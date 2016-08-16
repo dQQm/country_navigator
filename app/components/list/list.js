@@ -12,23 +12,19 @@
             controller: controller,
             scope: {
                 rows: '=',
-                columns: '='
+                columns: '=',
+                titles: '='
             }
         };
 
         return directive;
     }
 
-    controller.$inject = ['$scope', 'conf', '$filter', 'countriesInfo', '$state'];
-    function controller($scope, conf, $filter, countriesInfo, $state) {
+    controller.$inject = ['$scope'];
+    function controller($scope) {
         $scope.filteredData = [];
         $scope.currPage = 1;
         $scope.pageLenght = 5;
-        $scope.current = $state.current
-        if ($scope.current.name === 'countries') {
-            $scope.rows = countriesInfo.data;
-        }/*else if ($scope.current.name === 'cities') {$scope.rows = cities.data}*/;
-        $scope.columns = Object.keys($scope.rows[0]);
 
         $scope.numberOfPages = function () {
             var from = (($scope.currPage - 1) * $scope.pageLenght);
