@@ -33,7 +33,8 @@
     "alertifyjs": "latest",
     "ngUpload": "latest",
     "angular-mocks": "~1.5",
-    "angular-datatables": "~0.5"
+    "angular-datatables": "~0.5",
+    "ngmap":"latest"
   },
   "devDependencies": {
     
