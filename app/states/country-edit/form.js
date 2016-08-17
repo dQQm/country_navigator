@@ -10,7 +10,7 @@
     function config($stateProvider) {
         $stateProvider
             .state('form', {
-                url: '/form',
+                url: '/form/:name',
                 template: '<form-state></form-state>'
             });
     }
@@ -28,8 +28,15 @@
         return directive;
     }
 
-    controller.$inject = ['$scope', 'survey'];
-    function controller($scope, survey) {
+    controller.$inject = ['$scope', '$stateParams'];
+    function controller($scope, stateParams) {
+        $scope.vm = {
+            data: {recomendations: []}
+        }
+
+        if (stateParams.name) {
+
+        }
 
     }
 

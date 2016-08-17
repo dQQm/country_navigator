@@ -9,10 +9,20 @@
 			ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
 			placeholder="Enter recommendations">
         <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Add
-      	<span class="input-group-btn"></span>
+        <button class="btn btn-default" type="button" ng-click="vm.showRecommended(recom)" >Add
+      	<span class="input-group-btn"></span> 
         </button>
         </span>
     </div>
 </div>
+<table id="recomTable">
+<tr ng-repeat="recom in data">
+    <td><input type="text" ng-model="recom" ng-show="vm.isEditable[$index]"><li ng-hide="vm.isEditable[$index]">{{recom}}</li></td>
+    <td><button type="button" ng-click="vm.editRecom($index)"><span ng-show="vm.isEditable[$index]">Save</span><span ng-hide="vm.isEditable[$index]">Edit</span></button>        
+    <button type="button" ng-click="vm.deleteRecom(recom)">Delete</button>
+    </td>
+ </tr>
+  
+</table>
+
 <br>	

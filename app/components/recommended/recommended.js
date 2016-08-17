@@ -10,7 +10,7 @@
             templateUrl: './components/recommended/recommended.html',
             restrict: 'E',
             controller: controller,
-            scope: {}
+            scope: { data: '=' }
         };
 
         return directive;
@@ -18,7 +18,33 @@
 
     controller.$inject = ['$scope', 'conf'];
     function controller($scope, conf) {
-        console.log($scope.conf);
+        $scope.vm = {
+            showRecommended: showRecommended, 
+            isEditable: [],
+            editRecom: editRecom,
+            deleteRecom: deleteRecom
+        };
+
+
+        function showRecommended(text) {
+
+            $scope.data.push(text);
+            $scope.recom = '';
+        }
+
+        function editRecom($index) {
+            
+            $scope.vm.isEditable[$index] = !$scope.vm.isEditable[$index];
+        }
+
+        function deleteRecom(text) {
+
+            _.remove($scope.data, function (recom) {
+                return recom === text;
+            })
+           
+        }
+
     }
 
 }(angular));

@@ -15,7 +15,7 @@
 <h2>Add/Edit country</h2>
     <form name="form" novalidate>
     <div class="form-group">
-    <label name="country">Name of the country<span>*</span>:</label>
+    <label name="country">Name of the country<span id="star">*</span>:</label>
     <input 
       type="text" 
       name="countryName" 
@@ -31,7 +31,7 @@
     </div>
    
       
-      <label name="capitalName">Capital of the country<span>*</span>:</label>
+      <label name="capitalName">Capital of the country<span id="star">*</span>:</label>
       <input
        type="text" 
        name="capitalName" 
@@ -43,10 +43,10 @@
        required >
       <div ng-messages="form.capitalName.$error" ng-show="form.capitalName.$touched || form.$submitted">
       <p ng-message="required">Please, enter capital name.</p>
-      <p ng-message="pattern">No special symbols allowed!</p>
+      <p ng-message="pattern">No special symbols allowed!<
       </div>
 
-      <label name="flagUrl">Flag of the country<span>*</span>:</label>
+      <label name="flagUrl">Flag of the country<span id="star">*</span>:</label>
       <input 
       type="url" 
       name="flagUrl" 
@@ -110,6 +110,26 @@
      </div>     
     </div>
 
+     <label name="description">Latitude:</label>
+     <input 
+      type="text" 
+      class="form-control" 
+      name="description" 
+      ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
+      ng-model="descr" 
+      placeholder="Enter a latitude">
+
+      <label name="description">Longitude:</label>
+     <input 
+      type="text" 
+      class="form-control" 
+      name="description" 
+      ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
+      ng-model="descr" 
+      placeholder="Enter a longitude">
+
+
+
       <div class="form-group">
       <label name="description">Description:</label>
       <input 
@@ -124,11 +144,10 @@
       <p ng-message="pattern">No special symbols allowed!</p>
       </div>     
     </div>
-
     </div>
 
       <div>
-        <recommended></recommended>
+        <recommended data="vm.data.recomendations"></recommended>
         <ui-view></ui-view>       
     </div>
 
