@@ -10,8 +10,8 @@
     function countriesInfo($http) {
         return {
             data:[{
-                "countrieName": "test1",
-                "capitalName": "testName",
+                "countryName": "Bulgaria",
+                "capitalName": "Sofia",
                 "flagUrl": "www.example.com",
                 "language": "testLanguage",
                 "currency": "gold",
@@ -20,8 +20,8 @@
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             }, {
-                "countrieName": "test2",
-                "capitalName": "testName",
+                "countryName": "Turkey",
+                "capitalName": "Ankara",
                 "flagUrl": "www.example.com",
                 "language": "testLanguage",
                 "currency": "gold",
@@ -30,8 +30,8 @@
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             }, {
-                "countrieName": "test3",
-                "capitalName": "testName",
+                "countryName": "Romania",
+                "capitalName": "Bucharest",
                 "flagUrl": "www.example.com",
                 "language": "testLanguage",
                 "currency": "gold",
@@ -40,8 +40,8 @@
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             },{
-                "countrieName": "test4",
-                "capitalName": "testName",
+                "countryName": "Serbia",
+                "capitalName": "Belgrad",
                 "flagUrl": "www.example.com",
                 "language": "testLanguage",
                 "currency": "gold",
@@ -50,8 +50,8 @@
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             }, {
-                "countrieName": "test5",
-                "capitalName": "testName",
+                "countryName": "Greece",
+                "capitalName": "Athens",
                 "flagUrl": "www.example.com",
                 "language": "testLanguage",
                 "currency": "gold",
@@ -60,8 +60,8 @@
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             }, {
-                "countrieName": "test6",
-                "capitalName": "testName",
+                "countryName": "Macedonia",
+                "capitalName": "Skopje",
                 "flagUrl": "www.example.com",
                 "language": "testLanguage",
                 "currency": "gold",
@@ -70,8 +70,8 @@
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             },{
-                "countrieName": "test7",
-                "capitalName": "testName",
+                "countryName": "Hungary",
+                "capitalName": "Budapest",
                 "flagUrl": "www.example.com",
                 "language": "testLanguage",
                 "currency": "gold",
@@ -80,8 +80,8 @@
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             }, {
-                "countrieName": "test8",
-                "capitalName": "testName",
+                "countryName": "Czech Republic",
+                "capitalName": "Prague",
                 "flagUrl": "www.example.com",
                 "language": "testLanguage",
                 "currency": "gold",
@@ -90,8 +90,8 @@
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             }, {
-                "countrieName": "test9",
-                "capitalName": "testName",
+                "countryName": "Albania",
+                "capitalName": "Tirana",
                 "flagUrl": "www.example.com",
                 "language": "testLanguage",
                 "currency": "gold",
@@ -100,8 +100,8 @@
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             },{
-                "countrieName": "test10",
-                "capitalName": "testName",
+                "countryName": "Montenegro",
+                "capitalName": "Podgorica",
                 "flagUrl": "www.example.com",
                 "language": "testLanguage",
                 "currency": "gold",
@@ -110,8 +110,8 @@
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             }, {
-                "countrieName": "test11",
-                "capitalName": "testName",
+                "countryName": "Bosnia and Herzegovina",
+                "capitalName": "Srajevo",
                 "flagUrl": "www.example.com",
                 "language": "testLanguage",
                 "currency": "gold",
@@ -120,8 +120,8 @@
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             }, {
-                "countrieName": "test12",
-                "capitalName": "testName",
+                "countryName": "Crotia",
+                "capitalName": "Zagreb",
                 "flagUrl": "www.example.com",
                 "language": "testLanguage",
                 "currency": "gold",
@@ -131,30 +131,39 @@
                 "recomendations": ["stuf", "one"]
             }],columns : [{
                 "title": "Country",
+                "name" : "countryName",
                 "type": "string"
               }, {
                 "title": "Capital",
+                "name" : "capitalName",
                 "type": "string"
               }, {
                 "title": "Flag",
+                "name" : "flagUrl",
                 "type": "string"
               }, {
                 "title": "Language",
+                "name" : "language",
                 "type": "string"
               }, {
                 "title": "Currency",
+                "name" : "currency",
                 "type": "string"
               }, {
                 "title": "Population",
+                "name" : "population",
                 "type": "string"
               }, {
                 "title": "Size",
+                "name" : "size",
                 "type": "string"
               }, {
                 "title": "Description",
+                "name" : "description",
                 "type": "string"
               }, {
                 "title": "Recomendations",
+                "name" : "recomendations",
                 "type": "string"
               }]
             
