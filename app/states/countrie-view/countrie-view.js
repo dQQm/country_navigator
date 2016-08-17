@@ -29,10 +29,17 @@
         return directive;
     }
 
-    controller.$inject = ['$scope','$stateParams', 'countriesInfo', 'countriesView' ];
-    function controller($scope, $stateParams, countriesInfo, countriesView) {
+    controller.$inject = ['$scope','$stateParams', 'countriesInfo', 'countriesViewService' ];
+    function controller($scope, $stateParams, countriesInfo, countriesViewService) {
         $scope.countries = countriesInfo.data;
-        console.log(countriesView);
+        
+        countriesViewService.getCountrieInfo($stateParams)
+            .then( function(result) {
+                    $scope.countrieInfo = result;
+                    $scope.recomendations = result[0].recomendations;
+                    console.log(result[0].recomendations);
+        });
+       
 
     }
 

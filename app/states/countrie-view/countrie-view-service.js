@@ -3,14 +3,24 @@
 
     angular
         .module('app')
-        .factory('countriesView', countriesView);
+        .factory('countriesViewService', countriesViewService);
 
-    countriesView.$inject = ['$http', 'countriesInfo'];
+    countriesViewService.$inject = ['$http', 'countriesInfo', '$q'];
 
-    function countriesView($http, countriesInfo) {
+    function countriesViewService($http, countriesInfo, $q) {
         return {
-            test:countriesInfo
+            getCountrieInfo:getCountrieInfo
         };
+        function getCountrieInfo(countrieName) {
+            var defer = $q.defer();
+            countriesInfo = countriesInfo.data;
+            countrieName = countrieName.countrieName;
+            let result =  _.filter(countriesInfo, { 'countrieName': countrieName});
+            defer.resolve(result);
+
+            return defer.promise;
+        }
     }
+
 
 }(angular));

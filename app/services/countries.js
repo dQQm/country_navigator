@@ -12,11 +12,13 @@
             data:[{
                 "countrieName": "Lenovo",
                 "capitalName": "testName",
-                "flagUrl": "http://www.logodesignlove.com/images/negative/wwf-logo-design.jpg",
+                "flagUrl": "http://simpleicon.com/wp-content/uploads/camera.png",
                 "language": "testLanguage",
                 "currency": "gold",
                 "population": "10000",
                 "size": "10000 10000",
+                "lat":40.99959341455489,
+                "lan":-74.00594130000002,
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             }, {
@@ -27,6 +29,8 @@
                 "currency": "gold",
                 "population": "10000",
                 "size": "10000 10000",
+                "lat":40.7127837,
+                "lan":-74.00594130000002,
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             }, {
@@ -37,6 +41,8 @@
                 "currency": "gold",
                 "population": "10000",
                 "size": "10000 10000",
+                "lat":40.7127837,
+                "lan":-74.00594130000002,
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             }]
