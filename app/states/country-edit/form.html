@@ -27,45 +27,104 @@
       required >
     <div ng-messages="form.countryName.$error" ng-show="form.countryName.$touched || form.$submitted">
       <p ng-message="required">Please, enter country name.</p>
+      <p ng-message="pattern">No special symbols allowed!</p>
     </div>
-    <span ng-show="form.countryName.$error.pattern">No special symbols allowed!</span>
-      <div class="form-group">
+   
+      
       <label name="capitalName">Capital of the country<span>*</span>:</label>
-      <input type="text" name="capitalName" class="form-control" ng-model="capitaName" id="capital" placeholder="Enter capital name" ng-pattern='/^[a-zA-Z0-9-" ]*$/' required>
-    </div>
-     <span ng-show="form.capitalName.$touched && form.capitalName.$invalid">Please, enter capital name.</span>
-     <span ng-show="form.capitalName.$error.pattern">No special symbols allowed!</span>
-    <div class="form-group">
+      <input
+       type="text" 
+       name="capitalName" 
+       class="form-control" 
+       ng-class="{'input-invalid': form.countryName.$invalid && form.$submitted}"
+       ng-model="capitaName"  
+       placeholder="Enter capital name" 
+       ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
+       required >
+      <div ng-messages="form.capitalName.$error" ng-show="form.capitalName.$touched || form.$submitted">
+      <p ng-message="required">Please, enter capital name.</p>
+      <p ng-message="pattern">No special symbols allowed!</p>
+      </div>
+
       <label name="flagUrl">Flag of the country<span>*</span>:</label>
-      <input type="url" name="flagUrl" ng-model="flagUrl" class="form-control"  id="url" placeholder="Enter URL" required>
-      <span ng-show="form.flagUrl.$touched && form.flagUrl.$invalid">Please, enter valid URL!</span>
-    </div>
+      <input 
+      type="url" 
+      name="flagUrl" 
+      ng-model="flagUrl" 
+      class="form-control" 
+      ng-class="{'input-invalid': form.countryName.$invalid && form.$submitted}" 
+      placeholder="Enter URL" 
+      required >
+     <div ng-messages="form.flagUrl.$error" ng-show="form.flagUrl.$touched || form.$submitted">
+      <p ng-message="required">Please, enter URL.</p>
+      <p ng-message="url">Please, enter valid URL!</p>
+     </div>
+
+
     <div class="form-group">
       <label name="language">Language:</label>
-      <input type="text" class="form-control" name="language" ng-model="language" ng-pattern='/^[a-zA-Z0-9-" ]*$/' placeholder="Enter language">
-      <span ng-show="form.language.$error.pattern">No special symbols allowed!</span>
+      <input 
+      type="text" 
+      class="form-control" 
+      name="language" 
+      ng-model="language" 
+      ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
+      placeholder="Enter language">
+
+      <div ng-messages="form.language.$error">
+      <p ng-message="pattern">No special symbols allowed!</p>
+      </div>     
     </div>
+
      <div class="form-group">
       <label name="currency">Currency:</label>
-       <input type="number" id="currency" class="form-control" name="currency" ng-model="currency" placeholder="Enter currency" min="1" >
+       <input type="number" id="currency" class="form-control" name="currency" ng-model="currency"  placeholder="Enter currency" min="1" >
        <input type="text" id="symbol" class="form-control">
       <span ng-show="form.currency.$invalid">Invalid information!</span>
+  
+    <div class="form-group">
+     <label name="population">Population:</label>
+      <input 
+      type="number" 
+      name="population" 
+      ng-model="population" 
+      class="form-control" 
+      min="1" 
+      placeholder="Enter number of population">
+      <div ng-messages="form.population.$error">
+      <p ng-message="min">Invalid information!</p>
+     </div>
     </div>
 
     <div class="form-group">
-      <label name="population">Population:</label>
-      <input type="number" name="population" ng-model="population" class="form-control" min="1" placeholder="Enter number of population">
-      <span ng-show="form.population.$invalid">Invalid information!</span>
-    </div>
-    <div class="form-group">
       <label name="size">Size (km²):</label>
-      <input type="number" name="size" ng-model="size" class="form-control" min="1" placeholder="Enter size of country">
-      <span ng-show="form.size.$invalid">Invalid information!</span>
+      <input 
+      type="number" 
+      name="size" 
+      ng-model="size" 
+      class="form-control" 
+      min="1" 
+      placeholder="Enter size of country">
+      <div ng-messages="form.size.$error">
+      <p ng-message="min">Invalid information!</p>
+     </div>     
     </div>
+
       <div class="form-group">
       <label name="description">Description:</label>
-      <input type="text" class="form-control" name="description" ng-pattern='/^[a-zA-Z0-9-" ]*$/' ng-model="descr" placeholder="Enter a description">
-      <span ng-show="form.description.$error.pattern">No special symbols allowed!</span>
+      <input 
+      type="text" 
+      class="form-control" 
+      name="description" 
+      ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
+      ng-model="descr" 
+      placeholder="Enter a description">
+      
+      <div ng-messages="form.description.$error">
+      <p ng-message="pattern">No special symbols allowed!</p>
+      </div>     
+    </div>
+
     </div>
 
       <div>
