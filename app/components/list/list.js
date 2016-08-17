@@ -27,7 +27,6 @@
         $scope.pageLenght = 5;
         $scope.sortType = 'countryName'; // set the default sort type
         $scope.sortReverse = false;  // set the default sort order
-        $scope.searchFish = '';     // set the default search/filter term
 
         $scope.numberOfPages = function () {
             var from = (($scope.currPage - 1) * $scope.pageLenght);
@@ -42,12 +41,16 @@
         };
 
         // change sorting order
-        $scope.sort_by = function (newSortType) {
+        $scope.sort_by = function (newSortType, sortReverse) {
             if ($scope.sortType == newSortType)
                 $scope.sortReverse = !$scope.sortReverse;
 
             $scope.sortType = newSortType;
-
+            $scope.rows = _.sortBy($scope.rows, function(row) { return row[newSortType]; })
+            
+            if ($scope.sortReverse == true) {
+                 $scope.rows = $scope.rows.reverse();
+            };
             // icon setup
             $('th i').each(function () {
                 // icon reset
@@ -57,7 +60,11 @@
                 $('th.' + newSortType + ' i').removeClass().addClass('fa fa-caret-down');
             else
                 $('th.' + newSortType + ' i').removeClass().addClass('fa fa-caret-up');
-        }; 
+
+             $scope.numberOfPages();
+
+        };
+
     }
 
 } (angular));
