@@ -9,7 +9,9 @@
         var directive = {
             templateUrl: './components/recommended/recommended.html',
             restrict: 'E',
+            require: '^form',
             controller: controller,
+            link: link,
             scope: { data: '=' }
         };
 
@@ -27,6 +29,7 @@
 
 
         function showRecommended(text) {
+            if (!text || text == '' || $scope.ctrl.$invalid) return;
 
             $scope.data.push(text);
             $scope.recom = '';
@@ -45,6 +48,11 @@
            
         }
 
+    }
+
+    function link($scope, el, attrs, form) {
+        $scope.form = form;
+        $scope.ctrl = form.recommendations;
     }
 
 }(angular));

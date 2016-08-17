@@ -14,7 +14,7 @@
 <div class="container">
 <h2>Add/Edit country</h2>
     <form name="form" novalidate>
-    <div class="form-group">
+    <div class="form-group has-success has-feedback">
     <label name="country">Name of the country<span id="star">*</span>:</label>
     <input 
       type="text" 
@@ -24,7 +24,10 @@
       ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
       placeholder="Enter country name" 
       ng-class="{'input-invalid': form.countryName.$invalid && form.$submitted}"
+      aria-describedby="inputSuccess2Status"
       required >
+        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+  <span id="inputSuccess2Status" class="sr-only">(success)</span></div>
     <div ng-messages="form.countryName.$error" ng-show="form.countryName.$touched || form.$submitted">
       <p ng-message="required">Please, enter country name.</p>
       <p ng-message="pattern">No special symbols allowed!</p>
