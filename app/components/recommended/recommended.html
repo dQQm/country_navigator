@@ -18,8 +18,8 @@
 <table id="recomTable">
 <tr ng-repeat="recom in data track by $index">
     <td><input type="text" ng-model="recom" ng-show="vm.isEditable[$index]"><li ng-hide="vm.isEditable[$index]">{{recom}}</li></td>
-    <td><button type="button" ng-click="vm.editRecom($index)"><span ng-show="vm.isEditable[$index]">Save</span><span ng-hide="vm.isEditable[$index]">Edit</span></button>        
-    <button type="button" ng-click="vm.deleteRecom(recom)">Delete</button>
+    <td><button type="button" ng-click="vm.editRecom($index)"><span ng-show="vm.isEditable[$index]" class="glyphicon glyphicon-floppy-disk"></span><span ng-hide="vm.isEditable[$index]" class="glyphicon glyphicon-pencil"></span></button>        
+    <button type="button" ng-click="vm.deleteRecom(recom)"><span class="glyphicon glyphicon-trash"></span></button>
     </td>
  </tr>
   
