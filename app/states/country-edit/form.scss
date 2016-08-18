@@ -1,5 +1,19 @@
 form-state {
-	
+
+	#notEmpty {
+		width: 98%;
+	}
+
+	input.ng-valid + span::after {
+		content: "\2713";
+		color: limegreen;
+	}
+
+	input.ng-invalid + span::after {
+		content: "X";
+		color: #ce0000;
+	}
+
 	#star {
 		color: red;
 	}
@@ -28,7 +42,6 @@ form-state {
 		border-color: lightgrey;
 		background-color: white;
 	}
-
 }
 
 
