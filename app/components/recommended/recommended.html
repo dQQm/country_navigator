@@ -9,7 +9,7 @@
 			ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
 			placeholder="Enter recommendations">
         <span class="input-group-btn">
-        <button class="btn btn-default" type="button" ng-click="vm.showRecommended(recom)">Add
+        <button class="btn btn-success" type="button" ng-click="vm.showRecommended(recom)">Add
       	<span class="input-group-btn"></span> 
         </button>
         </span>
@@ -17,9 +17,9 @@
 </div>
 <table id="recomTable">
 <tr ng-repeat="recom in data track by $index">
-    <td><input type="text" ng-model="recom" ng-show="vm.isEditable[$index]"><li ng-hide="vm.isEditable[$index]">{{recom}}</li></td>
-    <td><button type="button" ng-click="vm.editRecom($index)"><span ng-show="vm.isEditable[$index]" class="glyphicon glyphicon-floppy-disk"></span><span ng-hide="vm.isEditable[$index]" class="glyphicon glyphicon-pencil"></span></button>        
-    <button type="button" ng-click="vm.deleteRecom(recom)"><span class="glyphicon glyphicon-trash"></span></button>
+    <td><input type="text" ng-model="recom" ng-show="vm.isEditable[$index]" class="form-control"><li ng-hide="vm.isEditable[$index]">{{recom}}</li></td>
+    <td><button type="button" ng-click="vm.editRecom($index)" class="btn btn-info"><span ng-show="vm.isEditable[$index]" class="glyphicon glyphicon-floppy-disk"></span><span ng-hide="vm.isEditable[$index]" class="glyphicon glyphicon-pencil"></span></button>        
+    <button type="button" ng-click="vm.deleteRecom(recom)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
     </td>
  </tr>
   

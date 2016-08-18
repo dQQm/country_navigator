@@ -76,7 +76,7 @@
   <div class="row">
   <div class="col-lg-6">
     <div class="input-group">
-      <span class="input-group-addon">
+      <span class="input-group-addon" id="addon">
         <label>Numeric:</label>
       </span>
       <input 
@@ -95,7 +95,7 @@
   </div>
   <div class="col-lg-6">
     <div class="input-group">
-      <span class="input-group-addon">
+      <span class="input-group-addon" id="addon">
         <label>Alpha/Symbol:</label>
       </span>
       <input type="text" class="form-control" placeholder="Enter alpha or symbol"> 
@@ -150,21 +150,13 @@
    <input 
     type="text" 
     class="form-control" 
-    name="description" 
-    ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
-    ng-model="descr" 
     placeholder="Enter a latitude">
 
     <label name="description">Longitude:</label>
-   <input 
+    <input 
     type="text" 
     class="form-control" 
-    name="description" 
-    ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
-    ng-model="descr" 
     placeholder="Enter a longitude">
-
-
 
     <div class="form-group">
     <label name="description">Description:</label>
@@ -172,7 +164,7 @@
     type="text" 
     class="form-control" 
     name="description" 
-    ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
+    ng-pattern='/^[a-zA-Z0-9-" .,]*$/' 
     ng-model="descr" 
     placeholder="Enter a description">
     
