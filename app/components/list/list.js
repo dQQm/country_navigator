@@ -51,14 +51,14 @@
 
             if ($scope.search !== "") {
                 $scope.search = $scope.search.charAt(0).toUpperCase() + $scope.search.slice(1);
-                $scope.searchResults = _.filter($scope.rows, function(row) { return row.countryName.indexOf($scope.search) > -1; })
+                $scope.searchResults = _.filter($scope.rows, function (row) { return row.countryName.indexOf($scope.search) > -1 || row.capitalName.indexOf($scope.search) > -1 || row.flagUrl.indexOf($scope.search) > -1 || row.language.indexOf($scope.search) > -1 || row.currency.indexOf($scope.search) > -1 || row.population.indexOf($scope.search) > -1 || row.size.indexOf($scope.search) > -1 || row.description.indexOf($scope.search) > -1 || row.recomendations.indexOf($scope.search) > -1;})
             };
 
             $scope.sortType = newSortType;
-            $scope.searchResults = _.sortBy($scope.searchResults, function(row) { return row[newSortType]; })
+            $scope.searchResults = _.sortBy($scope.searchResults, function (row) { return row[newSortType]; })
 
             if ($scope.sortReverse == true) {
-                 $scope.searchResults = $scope.searchResults.reverse();
+                $scope.searchResults = $scope.searchResults.reverse();
             };
             // icon setup
             $('th i').each(function () {
@@ -70,7 +70,7 @@
             else
                 $('th.' + newSortType + ' i').removeClass().addClass('fa fa-caret-up');
 
-             $scope.numberOfPages();
+            $scope.numberOfPages();
 
         };
 
