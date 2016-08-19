@@ -18,6 +18,11 @@
 
     controller.$inject = ['$scope', 'conf'];
     function controller($scope, conf) {
+        $scope.vm = {
+            data: {'lng':null,
+                    'lat':null,},
+        }
+        var vm = $scope.vm;
       function initialize() {
 
         var markers = [];
@@ -40,14 +45,19 @@
         // Listen for the event fired when the user selects an item from the
         // pick list. Retrieve the matching places for that item.
         google.maps.event.addListener(searchBox, 'places_changed', function() {
-          var places = searchBox.getPlaces();
+            var places = searchBox.getPlaces();
+            
+            var lat = places[0].geometry.location.lat();
+            var lng = places[0].geometry.location.lng();
+            vm.data.lat = lat;
+            vm.data.lng = lng;
 
-          if (places.length == 0) {
-            return;
-          }
-          for (var i = 0, marker; marker = markers[i]; i++) {
-            marker.setMap(null);
-          }
+            if (places.length == 0) {
+                return;
+            }
+            for (var i = 0, marker; marker = markers[i]; i++) {
+                marker.setMap(null);
+            }
 
           // For each place, get the icon, place name, and location.
           markers = [];
@@ -72,18 +82,7 @@
           map.fitBounds(bounds);
           map.setZoom(8);
         });
-
-        google.maps.event.addListener(map, 'click', function(event) {
-          getLocation(event.latLng);
-        });
-
-        function getLocation(location) {
-
-          var lat = document.getElementById("lat");
-          var lan = document.getElementById("lan");
-          lat.value = location.lat();
-          lan.value = location.lng();
-       }     
+        
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     }

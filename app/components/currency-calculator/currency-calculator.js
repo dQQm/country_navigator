@@ -23,11 +23,15 @@
         $scope.selectTo = {'to':null};
         $scope.from = currencyConvertor.from;
         $scope.quantity = {'quantity':null};
-        $scope.convertIt = function convertIt(quantity, from, to){
-            console.log(quantity ,from ,to);
 
+        $scope.convertIt = function convertIt(quantity, from, to){
+            currencyConvertor.convert(quantity, from, to)
+            .then( function(result) {
+                $scope.result ={'result':result,}
+            });  
         }
-        console.log(currencyConvertor.currencyes);
+            
+        
     }
 
 }(angular));

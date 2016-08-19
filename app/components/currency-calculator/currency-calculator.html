@@ -1,10 +1,9 @@
 <div class="jumbotron">
-<form name="convertor">
     Quantity<input type="number" ng-model="quantity.quantity">
     from <select ng-options="from as from for from in from track by from" ng-model="selectFrom"></select>
    to <select ng-options="to as to for to in to track by to" ng-model="selectTo"></select>
 
-    <button ng-click="convertIt(quantity.quantity, selectFrom, selectTo)">Convert</button>
-<form>
+    <button type="button" ng-click="convertIt(quantity.quantity, selectFrom, selectTo)">Convert</button>
 Result
+<div ng-model="result.result">{{result.result}}</div>
 </div>

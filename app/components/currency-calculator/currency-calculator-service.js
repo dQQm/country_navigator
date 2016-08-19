@@ -12,23 +12,24 @@
     service.$inject = ['$http'];
 
     function service($http) {
-        convert();
+        //convert();
         return {
             res: res,
             from:from,
             to:to,
+            convert:convert,
         };
 
-        function convert() {
-            $http({
+        function convert(quantity, from, to) {
+            return $http({
                 headers: {
                 'X-Mashape-Key': '9FwiRqSN7EmshEGD9i5Kekrzu9uYp10eKmPjsnLQuSwwSC4Vgi'
                 },
                 methood: 'GET',
-                url: 'https://currency-exchange.p.mashape.com/exchange?from=eur&q=1.0&to=bgn',
+                url: 'https://currency-exchange.p.mashape.com/exchange?from='+from+'&q='+quantity+'.0&to='+to,
             }).then(function successCallback(response) {
-                res = response.data;
-                    console.log(res);
+                    console.log('servoce'+res);
+                return res = response.data;
             }, function errorCallback(response) {
                 console.log('error' + response);
             });
