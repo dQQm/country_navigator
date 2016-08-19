@@ -18,64 +18,76 @@
 
     controller.$inject = ['$scope', 'conf'];
     function controller($scope, conf) {
-        $scope.map = map
-        var map;
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+      function initialize() {
+
+        var markers = [];
+        var map = new google.maps.Map(document.getElementById('map'), {
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          zoom:6
         });
-      
+
+        var defaultBounds = new google.maps.LatLngBounds(
+            new google.maps.LatLng(-33.8902, 151.1759),
+            new google.maps.LatLng(-33.8474, 151.2631));
+        map.fitBounds(defaultBounds);
+
+
+        // Create the search box and link it to the UI element.
+        var input = (document.getElementById('pac-input'));
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        var searchBox = new google.maps.places.SearchBox(input);
+
+        // Listen for the event fired when the user selects an item from the
+        // pick list. Retrieve the matching places for that item.
+        google.maps.event.addListener(searchBox, 'places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+          for (var i = 0, marker; marker = markers[i]; i++) {
+            marker.setMap(null);
+          }
+
+          // For each place, get the icon, place name, and location.
+          markers = [];
+          var bounds = new google.maps.LatLngBounds();
+          for (var i = 0, place; place = places[i]; i++) {
+            var image = {
+              url: place.icon,
+            };
+
+            // Create a marker for each place.
+            var marker = new google.maps.Marker({
+              map: map,
+              icon: image,
+              title: place.name,
+              position: place.geometry.location,
+            });
+
+            markers.push(marker);
+            bounds.extend(place.geometry.location);
+          }
+
+          map.fitBounds(bounds);
+          map.setZoom(8);
+        });
+
+        google.maps.event.addListener(map, 'click', function(event) {
+          getLocation(event.latLng);
+        });
+
+        function getLocation(location) {
+
+          var lat = document.getElementById("lat");
+          var lan = document.getElementById("lan");
+          lat.value = location.lat();
+          lan.value = location.lng();
+       }     
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
     }
 
+
+  
 }(angular));
-
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-<script
-src="http://maps.googleapis.com/maps/api/js">
-</script>
-
-<script>
-var map;
-var myCenter=new google.maps.LatLng(51.508742,-0.120850);
-
-function initialize()
-{
-var mapProp = {
-  center:myCenter,
-  zoom:5,
-
-  };
-
-  map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-  google.maps.event.addListener(map, 'click', function(event) {
-    getLocation(event.latLng);
-  });
-}
-
-function getLocation(location) {
-
-  console.log(location);
-var lat = document.getElementById("lat");
-var lan = document.getElementById("lan");
-lat.value = location.lat();
-lan.value = location.lan();
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-</head>
-
-<body>
-<div id="googleMap" style="width:500px;height:380px;"></div>
-langitude<input id="lan" type="text">
-latitude<input id="lat" type="text">
-
-
-</body>
-</html>
