@@ -4,14 +4,15 @@
     angular
         .module('app')
         .directive('formState', form)
-        .config(config);
+        .config(config)
+        
 
     config.$inject = ['$stateProvider'];
     function config($stateProvider) {
         $stateProvider
             .state('form', {
                 url: '/form/:name',
-                template: '<form-state></form-state>'
+                template: '<form-state></form-state>'            
             });
     }
 
@@ -20,24 +21,29 @@
             templateUrl: './states/country-edit/form.html',
             restrict: 'E',
             controller: controller,
-            scope: {
-                name: '='
-            }
+            scope: {}
         };
 
         return directive;
     }
 
-    controller.$inject = ['$scope', '$stateParams'];
-    function controller($scope, stateParams) {
+    controller.$inject = ['$scope', '$stateParams', 'countrieInfo'];
+    function controller($scope, stateParams, countrieInfo) {
         $scope.vm = {
             data: {recomendations: []}
-        }
+        };
 
-        if (stateParams.name) {
+        $scope.name = stateParams.name;
 
-        }
+        if ($scope.name) {
+            $scope.vm.data = _.find(countrieInfo.data, function (country) {
+                return country.countrieName.toLowerCase() === $scope.name.toLowerCase();
+            });
+        };
 
+        
+
+        
     }
 
 }(angular));

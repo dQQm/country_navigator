@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title></title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
-</head>
-<body>
+
+<div>
 
 <div class="container">
 <h2>Add/Edit country</h2>
@@ -21,7 +11,7 @@
       type="text" 
       id="notEmpty"
       name="countryName" 
-      ng-model="countryName" 
+      ng-model="vm.data.countrieName" 
       class="form-control" 
       ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
       placeholder="Enter country name" 
@@ -43,7 +33,7 @@
        name="capitalName" 
        class="form-control" 
        ng-class="{'input-invalid': form.countryName.$invalid && form.$submitted}"
-       ng-model="capitaName"  
+       ng-model="vm.data.capitalName"  
        placeholder="Enter capital name" 
        ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
        required >
@@ -60,7 +50,7 @@
     type="url" 
     name="flagUrl" 
     id="notEmpty"
-    ng-model="flagUrl" 
+    ng-model="vm.data.flagUrl" 
     class="form-control" 
     ng-class="{'input-invalid': form.countryName.$invalid && form.$submitted}" 
     placeholder="Enter URL" 
@@ -83,10 +73,10 @@
       type="number"
       class="form-control" 
       name="currency" 
-      ng-model="currency"  
-      placeholder="Enter numeric" 
+      ng-model="vm.data.currencyNumber"  
+      placeholder="Enter number" 
       min="1" 
-      ng-pattern="^\$?(((\d{1,6}(\.\d{1,2})?)|(\d{1,3},\d{3}(\.\d{1,2})?)|\(((\d{1,6}(\.\d{1,2})?)|(\d{1,3},\d{3}(\.\d{1,2})?))\)))$" >
+      >
     </div>
     <div ng-messages="form.currency.$error">
     <p ng-message="min">Invalid information!</p>
@@ -98,7 +88,7 @@
       <span class="input-group-addon" id="addon">
         <label>Alpha/Symbol:</label>
       </span>
-      <input type="text" class="form-control" placeholder="Enter alpha or symbol"> 
+      <input type="text" class="form-control" ng-model="vm.data.currencySymbol"  placeholder="Enter alpha or symbol"> 
     </div>
   </div>
 </div>
@@ -109,7 +99,7 @@
     type="text" 
     class="form-control" 
     name="language" 
-    ng-model="language" 
+    ng-model="vm.data.language" 
     ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
     placeholder="Enter language">
 
@@ -123,7 +113,7 @@
     <input 
     type="number" 
     name="population" 
-    ng-model="population" 
+    ng-model="vm.data.population" 
     class="form-control" 
     min="1" 
     placeholder="Enter number of population">
@@ -137,7 +127,7 @@
     <input 
     type="number" 
     name="size" 
-    ng-model="size" 
+    ng-model="vm.data.size" 
     class="form-control" 
     min="1" 
     placeholder="Enter size of country">
@@ -150,13 +140,15 @@
    <input 
     type="text" 
     class="form-control" 
-    placeholder="Enter a latitude">
+    placeholder="Enter latitude"
+    ng-model="vm.data.latitude">
 
     <label name="description">Longitude:</label>
     <input 
     type="text" 
     class="form-control" 
-    placeholder="Enter a longitude">
+    placeholder="Enter longitude"
+    ng-model="vm.data.longitude">
 
     <div class="form-group">
     <label name="description">Description:</label>
@@ -165,8 +157,8 @@
     class="form-control" 
     name="description" 
     ng-pattern='/^[a-zA-Z0-9-" .,]*$/' 
-    ng-model="descr" 
-    placeholder="Enter a description">
+    ng-model="vm.data.description" 
+    placeholder="Enter description">
     
     <div ng-messages="form.description.$error">
     <p ng-message="pattern">No special symbols allowed!</p>
@@ -183,6 +175,5 @@
 </form>
 </div>
 
-</body>
-</html>
+</div>
 
