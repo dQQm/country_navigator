@@ -23,6 +23,8 @@
     controller.$inject = ['$scope'];
     function controller($scope) {
         $scope.filteredData = [];
+        $scope.search = "";
+        $scope.searchResults = $scope.rows;
         $scope.currPage = 1;
         $scope.pageLenght = 5;
         $scope.sortType = 'countryName'; // set the default sort type
@@ -31,7 +33,7 @@
         $scope.numberOfPages = function () {
             var from = (($scope.currPage - 1) * $scope.pageLenght);
             var to = from + $scope.pageLenght;
-            $scope.filteredData = $scope.rows.slice(from, to);
+            $scope.filteredData = $scope.searchResults.slice(from, to);
         };
 
         $scope.numberOfPages();
@@ -42,14 +44,21 @@
 
         // change sorting order
         $scope.sort_by = function (newSortType, sortReverse) {
+            $scope.searchResults = $scope.rows;
+
             if ($scope.sortType == newSortType)
                 $scope.sortReverse = !$scope.sortReverse;
 
+            if ($scope.search !== "") {
+                $scope.search = $scope.search.charAt(0).toUpperCase() + $scope.search.slice(1);
+                $scope.searchResults = _.filter($scope.rows, function(row) { return row.countryName.indexOf($scope.search) > -1; })
+            };
+
             $scope.sortType = newSortType;
-            $scope.rows = _.sortBy($scope.rows, function(row) { return row[newSortType]; })
-            
+            $scope.searchResults = _.sortBy($scope.searchResults, function(row) { return row[newSortType]; })
+
             if ($scope.sortReverse == true) {
-                 $scope.rows = $scope.rows.reverse();
+                 $scope.searchResults = $scope.searchResults.reverse();
             };
             // icon setup
             $('th i').each(function () {
