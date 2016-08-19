@@ -27,7 +27,6 @@
             deleteRecom: deleteRecom
         };
 
-
         function showRecommended(text) {
             if (!text || text == '' || $scope.ctrl.$invalid) return;
 
@@ -47,7 +46,6 @@
             })
            
         }
-
     }
 
     function link($scope, el, attrs, form) {
