@@ -33,7 +33,7 @@
                 "lat":40.7127837,
                 "lan":-74.00594130000002,
                 "description": "Officially the Republic of Austria is a federal republic and a landlocked country of over 8.66 million people in Central Europe. It is bordered by the Czech Republic and Germany to the north, Hungary and Slovakia to the east, Slovenia and Italy to the south, and Switzerland and Liechtenstein to the west. The territory of Austria covers 83,879 square kilometres (32,386 sq mi). Austria's terrain is highly mountainous, lying within the Alps; only 32% of the country is below 500 metres (1,640 ft), and its highest point is 3,798 metres (12,461 ft). The majority of the population speak local Bavarian dialects of German as their native language, and Austrian German in its standard form is the country's official language.Other local official languages are Hungarian, Burgenland Croatian, and Slovene.",
-                "recomendations": ["stuf", "one"],
+                "recomendations": ["stuf", "one"]
             }, {
                 "countrieName": "test",
                 "capitalName": "testName",
@@ -46,7 +46,6 @@
                 "lan":-74.00594130000002,
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
-            },
             }],columns : [{
                 "title": "Country",
                 "name" : "countryName",
@@ -84,7 +83,6 @@
                 "name" : "recomendations",
                 "type": "string"
               }]
-            
         };
     }
 
