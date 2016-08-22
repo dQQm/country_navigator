@@ -3,7 +3,7 @@
     from <select ng-options="from as from for from in from track by from" ng-model="selectFrom"></select>
    to <select ng-options="to as to for to in to track by to" ng-model="selectTo"></select>
 
-    <button type="button" ng-click="convertIt(quantity.quantity, selectFrom, selectTo)">Convert</button>
+    <button type="button" ng-click="convertIt(quantity.quantity, selectTo, selectFrom)">Convert</button>
 Result
 <div ng-model="result.result">{{result.result}}</div>
 </div>
