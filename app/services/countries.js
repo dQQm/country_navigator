@@ -22,6 +22,7 @@
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
             }, {
+
                 "countrieName": "Austria",
                 "capitalName": "Vienna",
                 "flagUrl": "http://flagpedia.net/data/flags/big/at.png",
@@ -45,7 +46,45 @@
                 "lan":-74.00594130000002,
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
-            }]
+            },
+            }],columns : [{
+                "title": "Country",
+                "name" : "countryName",
+                "type": "string"
+              }, {
+                "title": "Capital",
+                "name" : "capitalName",
+                "type": "string"
+              }, {
+                "title": "Flag",
+                "name" : "flagUrl",
+                "type": "string"
+              }, {
+                "title": "Language",
+                "name" : "language",
+                "type": "string"
+              }, {
+                "title": "Currency",
+                "name" : "currency",
+                "type": "string"
+              }, {
+                "title": "Population",
+                "name" : "population",
+                "type": "string"
+              }, {
+                "title": "Size",
+                "name" : "size",
+                "type": "string"
+              }, {
+                "title": "Description",
+                "name" : "description",
+                "type": "string"
+              }, {
+                "title": "Recomendations",
+                "name" : "recomendations",
+                "type": "string"
+              }]
+            
         };
     }
 

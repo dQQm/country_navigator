@@ -1,0 +1,32 @@
+<div class="container-list">
+    <div class="table-responsive">
+        <h2>Countries Table</h2>
+        <p>List of countries and their capitals and usefull information</p>
+        <div class="form">
+            <label>Search</label>
+            <input type="text" ng-model="search" ng-change="sort_by('search')" class="form-control" placeholder="Search">
+        </div>
+        <table class="table table-striped table-condensed table-hover" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th class='{{title.name}}' ng-repeat="title in titles">{{title.title}}
+                        <a ng-click="sort_by(title.name,'desc')">
+                            <i class="fa fa-sort"></i>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in filteredData">
+                    <td ng-repeat="column in columns">{{row[column]}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <td colspan="6">
+                    <ul uib-pagination boundary-links="true" max-size="3" items-per-page="pageLenght" total-items="rows.length" ng-model="currPage"
+                        ng-change="pageChanged()"></ul>
+                </td>
+            </tfoot>
+        </table>
+    </div>
+</div>
