@@ -23,7 +23,7 @@
 				<marker position="[{{countrieInfo.lat}}, {{countrieInfo.lan}}]" animation="Animation.BOUNCE"></marker>
 				</map>
 				<ul>Recomendations
-					<li ng-repeat="recomendations in recomendations">
+					<li ng-repeat="recomendations in countrieInfo.recomendations">
 						{{recomendations}}
 					</li>
 				</ul>
@@ -31,3 +31,5 @@
 		</div>
 	</div>
 </div>
+ <cordinate-picker >
+   </cordinate-picker>

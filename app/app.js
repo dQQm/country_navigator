@@ -9,8 +9,8 @@
         'ngMockE2E',
         'datatables',
         'backand',
-        'ngMap'
-        'ngMessages'
+        'ngMap',
+        'ngMessages',
     ])
     .config(config)
     .run(run);
