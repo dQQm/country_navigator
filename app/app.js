@@ -10,6 +10,7 @@
         'datatables',
         'backand',
         'ngMap'
+        'ngMessages'
     ])
     .config(config)
     .run(run);

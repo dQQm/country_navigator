@@ -1,0 +1,14 @@
+  <div class="form-inline">
+    <input 
+      type="text" 
+      id="notEmpty"
+      name="countryName" 
+      ng-model="countryName" 
+      class="form-control" 
+      ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
+      placeholder="Enter country name" 
+      ng-class="{'input-invalid': form.countryName.$invalid && form.$submitted}"
+      aria-describedby="inputSuccess2Status"
+      required >
+    <span></span>
+  </div>
