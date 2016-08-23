@@ -17,7 +17,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="row in filteredData">
+                <tr ng-repeat="row in filteredData track by $index">
                     <td>{{row.countryName}}</td>
                     <td>{{row.capitalName}}</td>
                     <td><img src={{row.flagUrl}} width="30px"></td>

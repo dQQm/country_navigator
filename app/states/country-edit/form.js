@@ -27,8 +27,8 @@
         return directive;
     }
 
-    controller.$inject = ['$scope', '$stateParams', 'countriesInfo'];
-    function controller($scope, stateParams, countriesInfo) {
+    controller.$inject = ['$scope', '$stateParams', 'countriesInfo', '$state'];
+    function controller($scope, stateParams, countriesInfo, state) {
         $scope.vm = {
             data: {recomendations: []}
         };
@@ -42,8 +42,9 @@
         }
 
         $scope.saveData = function() {
-            countrieInfo.data.push($scope.vm.data);
-            alert("Saved!");
+            // countriesInfo.data.push($scope.vm.data);
+            // alert("Saved!");
+            state.go('countries');
         }
 
         

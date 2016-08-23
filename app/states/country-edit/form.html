@@ -9,9 +9,8 @@
       type="text" 
       id="notEmpty"
       name="countryName" 
-      ng-model="vm.data.countrieName" 
-      class="form-control" 
-      ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
+      ng-model="vm.data.countryName" 
+      class="form-control"
       placeholder="Enter country name" 
       ng-class="{'input-invalid': form.countryName.$invalid && form.$submitted}"
       aria-describedby="inputSuccess2Status"
@@ -33,7 +32,6 @@
           ng-class="{'input-invalid': form.countryName.$invalid && form.$submitted}"
           ng-model="vm.data.capitalName"
           placeholder="Enter capital name"
-          ng-pattern='/^[a-zA-Z0-9-" ]*$/'
           required >
           <span></span>
         </div>
@@ -147,7 +145,6 @@
           type="text"
           class="form-control"
           name="description"
-          ng-pattern='/^[a-zA-Z0-9-" .,'']*$/'
           ng-model="vm.data.description"
           placeholder="Enter description">
           
@@ -160,99 +157,7 @@
         <recommended data="vm.data.recomendations"></recommended>
         <ui-view></ui-view>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" ng-click="saveData()">Submit</button>
     </form>
   </div>
-
-  <div class="col-lg-6">
-    <div class="input-group">
-      <span class="input-group-addon" id="addon">
-        <label>Alpha/Symbol:</label>
-      </span>
-      <input type="text" class="form-control" ng-model="vm.data.currencySymbol"  placeholder="Enter alpha or symbol"> 
-    </div>
-  </div>
-</div>
-
-  <div class="form-group">
-    <label name="language">Language:</label>
-    <input 
-    type="text" 
-    class="form-control" 
-    name="language" 
-    ng-model="vm.data.language" 
-    ng-pattern='/^[a-zA-Z0-9-" ]*$/' 
-    placeholder="Enter language">
-
-    <div ng-messages="form.language.$error">
-    <p ng-message="pattern">No special symbols allowed!</p>
-    </div>     
-  </div>
-
-  <div class="form-group">
-   <label name="population">Population:</label>
-    <input 
-    type="number" 
-    name="population" 
-    ng-model="vm.data.population" 
-    class="form-control" 
-    min="1" 
-    placeholder="Enter number of population">
-    <div ng-messages="form.population.$error">
-    <p ng-message="min">Invalid information!</p>
-   </div>
-  </div>
-
-  <div class="form-group">
-    <label name="size">Size (km²):</label>
-    <input 
-    type="number" 
-    name="size" 
-    ng-model="vm.data.size" 
-    class="form-control" 
-    min="1" 
-    placeholder="Enter size of country">
-    <div ng-messages="form.size.$error">
-    <p ng-message="min">Invalid information!</p>
-   </div>     
-  </div>
-
-   <label name="description">Latitude:</label>
-   <input 
-    type="text" 
-    class="form-control" 
-    placeholder="Enter latitude"
-    ng-model="vm.data.latitude">
-
-    <label name="description">Longitude:</label>
-    <input 
-    type="text" 
-    class="form-control" 
-    placeholder="Enter longitude"
-    ng-model="vm.data.longitude">
-
-    <div class="form-group">
-    <label name="description">Description:</label>
-    <input 
-    type="text" 
-    class="form-control" 
-    name="description" 
-    ng-pattern='/^[a-zA-Z0-9-" .,]*$/' 
-    ng-model="vm.data.description" 
-    placeholder="Enter description">
-    
-    <div ng-messages="form.description.$error">
-    <p ng-message="pattern">No special symbols allowed!</p>
-    </div>     
-  </div>
-  </div>
-
-    <div>
-      <recommended data="vm.data.recomendations"></recommended>
-      <ui-view></ui-view>       
-  </div>
-
-  <button type="submit" class="btn btn-primary" ng-click="saveData()">Submit</button>
-</form>
-</div>
 </div>
