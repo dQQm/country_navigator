@@ -11,11 +11,10 @@
         return {
             getCountrieInfoData :getCountrieInfoData 
         };
-        function getCountrieInfoData (countrieName) {
+        function getCountrieInfoData (params) {
             var defer = $q.defer();
             var countriesInfoData = countriesInfo.data;
-            countrieName = countrieName.countrieName;
-            let result =  _.filter(countriesInfoData , { 'countrieName': countrieName});
+            let result =  _.filter(countriesInfoData , { 'countryName': params.countrieName});
             defer.resolve(result);
 
             return defer.promise;

@@ -52,7 +52,7 @@
 
             if ($scope.search !== "") {
                 $scope.searchData = $scope.search.toLowerCase();
-                $scope.searchResults = _.filter($scope.rows, function (row) { return row.countryName.toLowerCase().indexOf($scope.searchData) > -1 || row.capitalName.toLowerCase().indexOf($scope.searchData) > -1 || row.flagUrl.toLowerCase().indexOf($scope.searchData) > -1 || row.language.toLowerCase().indexOf($scope.searchData) > -1 || row.currency.toLowerCase().indexOf($scope.searchData) > -1 || row.population.toLowerCase().indexOf($scope.searchData) > -1 || row.size.toLowerCase().indexOf($scope.searchData) > -1 || row.description.toLowerCase().indexOf($scope.searchData) > -1;})
+                $scope.searchResults = _.filter($scope.rows, function (row) { return row.countryName.toLowerCase().indexOf($scope.searchData) > -1 || row.capitalName.toLowerCase().indexOf($scope.searchData) > -1 || row.flagUrl.toLowerCase().indexOf($scope.searchData) > -1 || row.language.toLowerCase().indexOf($scope.searchData) > -1 || row.currency.toLowerCase().indexOf($scope.searchData) > -1 || row.population === $scope.searchData || row.size === $scope.searchData || row.description.toLowerCase().indexOf($scope.searchData) > -1;})
             };
 
             $scope.sortType = newSortType;

@@ -24,7 +24,8 @@
             showRecommended: showRecommended, 
             isEditable: [],
             editRecom: editRecom,
-            deleteRecom: deleteRecom
+            deleteRecom: deleteRecom,
+            changed: changed
         };
 
         function showRecommended(text) {
@@ -47,8 +48,12 @@
             //     return recom === text;
             // })
 
-            var index=$scope.data.indexOf(text)
+            var index = $scope.data.indexOf(text)
             $scope.data.splice(index, 1);           
+        }
+
+        function changed(val, index) {
+            $scope.data[index] = val;
         }
     }
 

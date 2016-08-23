@@ -41,9 +41,9 @@
             });
         }
 
-        $scope.saveData = function(save) {
-            $scope.countrieInfo.push(save);
-
+        $scope.saveData = function() {
+            countrieInfo.data.push($scope.vm.data);
+            alert("Saved!");
         }
 
         
