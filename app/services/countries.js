@@ -12,7 +12,7 @@
             data:[{
                 "countryName": "Bulgaria",
                 "capitalName": "Sofia",
-                "flagUrl": "www.example.com",
+                "flagUrl": "http://img.freeflagicons.com/thumb/round_icon/bulgaria/bulgaria_640.png",
                 "language": "testLanguage",
                 "currency": "gold",
                 "population": "10000",

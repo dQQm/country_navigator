@@ -51,8 +51,8 @@
                 $scope.sortReverse = !$scope.sortReverse;
 
             if ($scope.search !== "") {
-                $scope.searchData = $scope.search.charAt(0).toUpperCase() + $scope.search.slice(1);
-                $scope.searchResults = _.filter($scope.rows, function (row) { return row.countryName.indexOf($scope.searchData) > -1 || row.capitalName.indexOf($scope.searchData) > -1 || row.flagUrl.indexOf($scope.searchData) > -1 || row.language.indexOf($scope.searchData) > -1 || row.currency.indexOf($scope.searchData) > -1 || row.population.indexOf($scope.searchData) > -1 || row.size.indexOf($scope.searchData) > -1 || row.description.indexOf($scope.searchData) > -1 || row.recomendations.indexOf($scope.searchData) > -1;})
+                $scope.searchData = $scope.search.toLowerCase();
+                $scope.searchResults = _.filter($scope.rows, function (row) { return row.countryName.toLowerCase().indexOf($scope.searchData) > -1 || row.capitalName.toLowerCase().indexOf($scope.searchData) > -1 || row.flagUrl.toLowerCase().indexOf($scope.searchData) > -1 || row.language.toLowerCase().indexOf($scope.searchData) > -1 || row.currency.toLowerCase().indexOf($scope.searchData) > -1 || row.population.toLowerCase().indexOf($scope.searchData) > -1 || row.size.toLowerCase().indexOf($scope.searchData) > -1 || row.description.toLowerCase().indexOf($scope.searchData) > -1;})
             };
 
             $scope.sortType = newSortType;
