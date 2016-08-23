@@ -10,8 +10,11 @@
     function config($stateProvider) {
         $stateProvider
             .state('countrieView', {
-                url: '/countrie-view',
-                template: '<countrie-view></countrie-view>'
+                url: '/countrie-view/:countrieName',
+                template: '<countrie-view></countrie-view>',
+                patams:{
+                    countrieName:null
+                }
             });
     }
 
@@ -26,10 +29,17 @@
         return directive;
     }
 
-    controller.$inject = ['$scope','countriesInfo' ];
-    function controller($scope, countriesInfo) {
+    controller.$inject = ['$scope','$stateParams', 'countriesInfo', 'countriesViewService' ];
+    function controller($scope, $stateParams, countriesInfo, countriesViewService) {
         $scope.countries = countriesInfo.data;
-        console.log(countriesInfo.data);
+        
+        countriesViewService.getCountrieInfo($stateParams)
+            .then( function(result) {
+                    $scope.countrieInfo = result;
+                    $scope.recomendations = result[0].recomendations;
+                    console.log(result[0].recomendations);
+        });
+       
 
     }
 

@@ -1,6 +1,35 @@
 <div class="jumbotron">
-	<div class="content" ng-repeat="countries in countries">
-	<h2 name="countrie-name">{{countries.countrieName}}</h2> 
-	
+	<div class="content" ng-repeat="countrieInfo in countrieInfo">
+<h2 name="countrie-name">{{countrieInfo.countrieName}}</h2>
+		<div class="row">
+			<div class="col-md-7">
+			
+					<div class="col-md-6">
+						
+						<p>Capital name :{{countrieInfo.capitalName}}</p>
+						<p>Language :{{countrieInfo.language}}</p>
+						<p>Currency :{{countrieInfo.currency}}</p>
+						<p>Population :{{countrieInfo.population}}</p>
+						<p>Size :{{countrieInfo.size}}</p>
+					</div>
+					<div class="col-md-6">
+						<img class="flag" ng-src="{{countrieInfo.flagUrl}}"/>
+					</div>
+
+				<p class="description">Description : {{countrieInfo.description}}</p>
+			</div>
+			<div class="col-md-5">
+				<map zoom="6" center="[{{countrieInfo.lat}}, {{countrieInfo.lan}}]">
+				<marker position="[{{countrieInfo.lat}}, {{countrieInfo.lan}}]" animation="Animation.BOUNCE"></marker>
+				</map>
+				<ul>Recomendations
+					<li ng-repeat="recomendations in countrieInfo.recomendations">
+						{{recomendations}}
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
+ <cordinate-picker >
+   </cordinate-picker>
