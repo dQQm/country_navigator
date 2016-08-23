@@ -9,13 +9,13 @@
 
     function countriesViewService($http, countriesInfo, $q) {
         return {
-            getCountrieInfo:getCountrieInfo
+            getCountrieInfoData :getCountrieInfoData 
         };
-        function getCountrieInfo(countrieName) {
+        function getCountrieInfoData (countrieName) {
             var defer = $q.defer();
-            countriesInfo = countriesInfo.data;
+            var countriesInfoData = countriesInfo.data;
             countrieName = countrieName.countrieName;
-            let result =  _.filter(countriesInfo, { 'countrieName': countrieName});
+            let result =  _.filter(countriesInfoData , { 'countrieName': countrieName});
             defer.resolve(result);
 
             return defer.promise;

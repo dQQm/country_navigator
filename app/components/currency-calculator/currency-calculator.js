@@ -19,10 +19,10 @@
     controller.$inject = ['$scope', 'conf', 'currencyConvertor'];
     function controller($scope, conf, currencyConvertor) {
         $scope.to = currencyConvertor.to;
-        $scope.selectFrom = {'from':null};
-        $scope.selectTo = {'to':null};
         $scope.from = currencyConvertor.from;
-        $scope.quantity = {'quantity':null};
+        $scope.vm = {data:{'selectFrom':null,
+                            'selectTo':null,
+                            'quantity':null,}};
 
         $scope.convertIt = function convertIt(quantity, from, to){
             currencyConvertor.convert(quantity, from, to)
