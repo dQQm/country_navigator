@@ -19,7 +19,15 @@
             </thead>
             <tbody>
                 <tr ng-repeat="row in filteredData">
-                    <td ng-repeat="column in columns">{{row[column]}}</td>
+                    <td>{{row.countryName}}</td>
+                    <td>{{row.capitalName}}</td>
+                    <td><img src={{row.flagUrl}}/></td>
+                    <td>{{row.language}}</td>
+                    <td>{{row.currency}}</td>
+                    <td>{{row.population}}</td>
+                    <td>{{row.size}}</td>
+                    <td>{{row.description}}</td>
+                    <td>{{row.recomendations}}</td>
                     <td><a href="" ui-sref="form({name: row.countryName})">Edit</a> </td>
                     <td><a href="" ui-sref="countrieView({countrieName: row.countryName})">View</a> </td>
                 </tr>
