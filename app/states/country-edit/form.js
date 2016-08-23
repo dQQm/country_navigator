@@ -41,6 +41,11 @@
             });
         }
 
+        $scope.saveData = function(save) {
+            $scope.countrieInfo.push(save);
+
+        }
+
         
 
         
