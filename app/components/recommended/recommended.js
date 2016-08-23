@@ -32,19 +32,23 @@
 
             $scope.data.push(text);
             $scope.recom = '';
+
         }
 
         function editRecom($index) {
             
             $scope.vm.isEditable[$index] = !$scope.vm.isEditable[$index];
+
         }
 
         function deleteRecom(text) {
 
-            _.remove($scope.data, function (recom) {
-                return recom === text;
-            })
-           
+            // _.remove($scope.data, function (recom) {
+            //     return recom === text;
+            // })
+
+            var index=$scope.data.indexOf(text)
+            $scope.data.splice(index, 1);           
         }
     }
 
