@@ -33,11 +33,9 @@
     function controller($scope, $stateParams, countriesInfo, countriesViewService) {
         $scope.countries = countriesInfo.data;
         
-        countriesViewService.getCountrieInfo($stateParams)
+        countriesViewService.getCountrieInfoData ($stateParams)
             .then( function(result) {
-                    $scope.countrieInfo = result;
-                    $scope.recomendations = result[0].recomendations;
-                    console.log(result[0].recomendations);
+                    $scope.countrieInfoData = result;
         });
        
 

@@ -10,7 +10,8 @@
             templateUrl: './components/cordinate-picker/cordinate-picker.html',
             restrict: 'E',
             controller: controller,
-            scope: {}
+            scope: {country: '='
+          }
         };
 
         return directive;
@@ -18,11 +19,7 @@
 
     controller.$inject = ['$scope', 'conf'];
     function controller($scope, conf) {
-        $scope.vm = {
-            data: {'lng':null,
-                    'lat':null,},
-        }
-        var vm = $scope.vm;
+        initialize();
       function initialize() {
 
         var markers = [];
@@ -49,8 +46,8 @@
             
             var lat = places[0].geometry.location.lat();
             var lng = places[0].geometry.location.lng();
-            vm.data.lat = lat;
-            vm.data.lng = lng;
+            $scope.country.lat = lat;
+            $scope.country.lan = lng;
 
             if (places.length == 0) {
                 return;
@@ -81,10 +78,10 @@
 
           map.fitBounds(bounds);
           map.setZoom(8);
+          $scope.$apply();
         });
         
       }
-      google.maps.event.addDomListener(window, 'load', initialize);
     }
 
 

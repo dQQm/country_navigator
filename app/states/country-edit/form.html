@@ -127,20 +127,20 @@
             <p ng-message="min">Invalid information!</p>
           </div>
         </div>
-        <cordinate-picker >
+        <cordinate-picker country="vm.data">
         </cordinate-picker>
         <label name="description">Latitude:</label>
         <input
         type="text"
         class="form-control"
         placeholder="Enter latitude"
-        ng-model="vm.data.latitude">
+        ng-model="vm.data.lat">
         <label name="description">Longitude:</label>
         <input
         type="text"
         class="form-control"
         placeholder="Enter longitude"
-        ng-model="vm.data.longitude">
+        ng-model="vm.data.lan">
         <div class="form-group">
           <label name="description">Description:</label>
           <input
