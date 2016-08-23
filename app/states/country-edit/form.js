@@ -37,7 +37,7 @@
 
         if ($scope.name) {
             $scope.vm.data = _.find(countriesInfo.data, function (country) {
-                return country.countrieName.toLowerCase() === $scope.name.toLowerCase();
+                return country.countryName.toLowerCase() === $scope.name.toLowerCase();
             });
         }
 
