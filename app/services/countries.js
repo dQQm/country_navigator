@@ -45,42 +45,87 @@
                 "lan":-74.00594130000002,
                 "description": "so many descriptions",
                 "recomendations": ["stuf", "one"]
+            }, {
+                "countryName": "Romania",
+                "capitalName": "Bucharest",
+                "flagUrl": "https://image.freepik.com/free-icon/freepik-logo-in-black-version_318-36111.png",
+                "language": "testLanguage",
+                "currency": "gold",
+                "population": 10000,
+                "size": 1000010000,
+                "lat":40.7127837,
+                "lan":-74.00594130000002,
+                "description": "so many descriptions",
+                "recomendations": ["stuf", "one"]
+            }, {
+                "countryName": "Italy",
+                "capitalName": "Rome",
+                "flagUrl": "https://image.freepik.com/free-icon/freepik-logo-in-black-version_318-36111.png",
+                "language": "Italian",
+                "currency": "frogs",
+                "population": 10000,
+                "size": 1000010000,
+                "lat":40.7127837,
+                "lan":-74.00594130000002,
+                "description": "so many descriptions",
+                "recomendations": ["stuf", "one"]
+            }, {
+                "countryName": "Ukraine",
+                "capitalName": "Kiev",
+                "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flag_of_Ukrainian_People's_Republic_(non-official,_1917).svg/113px-Flag_of_Ukrainian_People's_Republic_(non-official,_1917).svg.png",
+                "language": "Ukrainian",
+                "currency": "hryvnia",
+                "population": 10000,
+                "size": 1000010000,
+                "lat":40.7127837,
+                "lan":-74.00594130000002,
+                "description": "so many descriptions",
+                "recomendations": ["stuf", "one"]
             }],columns : [{
                 "title": "Country",
                 "name" : "countryName",
-                "type": "string"
+                "type": "string",
+                "width": "77px"
               }, {
                 "title": "Capital",
                 "name" : "capitalName",
-                "type": "string"
+                "type": "string",
+                "width": "100px"
               }, {
                 "title": "Flag",
                 "name" : "flagUrl",
-                "type": "string"
+                "type": "string",
+                "width": "54px"
               }, {
                 "title": "Language",
                 "name" : "language",
-                "type": "string"
+                "type": "string",
+                "width": "100px"
               }, {
                 "title": "Currency",
                 "name" : "currency",
-                "type": "string"
+                "type": "string",
+                "width": "84px"
               }, {
                 "title": "Population",
                 "name" : "population",
-                "type": "string"
+                "type": "string",
+                "width": "97px"
               }, {
                 "title": "Size",
                 "name" : "size",
-                "type": "string"
+                "type": "string",
+                "width": "50px"
               }, {
                 "title": "Description",
                 "name" : "description",
-                "type": "string"
+                "type": "string",
+                "width": "256px"
               }, {
                 "title": "Recomendations",
                 "name" : "recomendations",
-                "type": "string"
+                "type": "string",
+                "width": "138px"
               }]
         };
     }

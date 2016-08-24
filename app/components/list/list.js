@@ -30,13 +30,11 @@
         $scope.pageLenght = 5;
         $scope.sortType = 'countryName'; // set the default sort type
         $scope.sortReverse = false;  // set the default sort order
-
         $scope.numberOfPages = function () {
             var from = (($scope.currPage - 1) * $scope.pageLenght);
             var to = from + $scope.pageLenght;
             $scope.filteredData = $scope.searchResults.slice(from, to);
         };
-
         $scope.numberOfPages();
 
         $scope.pageChanged = function () {
