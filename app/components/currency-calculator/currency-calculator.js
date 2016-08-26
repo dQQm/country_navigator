@@ -27,7 +27,7 @@
         $scope.convertIt = function convertIt(quantity, from, to){
             currencyConvertor.convert(quantity, from, to)
             .then( function(result) {
-                $scope.result ={'result':result,}
+                $scope.result = result;
             });  
         }
             
