@@ -12,7 +12,6 @@
     service.$inject = ['$http'];
 
     function service($http) {
-        //convert();
         return {
             res: res,
             from:from,
@@ -28,8 +27,9 @@
                 methood: 'GET',
                 url: 'https://currency-exchange.p.mashape.com/exchange?from='+from+'&q='+quantity+'.0&to='+to,
             }).then(function successCallback(response) {
-                    console.log('servoce'+res);
-                return res = response.data;
+                return res ={'result': response.data,
+                                'to':to,
+                            }
             }, function errorCallback(response) {
                 console.log('error' + response);
             });

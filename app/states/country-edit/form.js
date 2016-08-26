@@ -42,6 +42,7 @@
         }
 
         $scope.saveData = function() {
+            if($scope.form.invalid) return false;
             // countriesInfo.data.push($scope.vm.data);
             // alert("Saved!");
             state.go('countries');

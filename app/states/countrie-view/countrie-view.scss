@@ -2,6 +2,24 @@
 	text-align: justify;
     text-justify: inter-word;
 }
+
 .flag{
 	width:100%;
+}
+
+span, h2{
+font-weight: bold;
+}
+
+ul{
+	list-style: none;
+	font-size:21px;
+}
+
+#currency{
+	display:-ms-flexbox;
+	display:flex;
+}
+.btn{
+	margin-left: 2%;
 }
