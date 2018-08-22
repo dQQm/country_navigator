@@ -3,21 +3,24 @@
 
     angular
         .module('app')
-        .directive('hi', hi)
+        .directive('countrieView', countrieView)
         .config(config);
 
     config.$inject = ['$stateProvider'];
     function config($stateProvider) {
         $stateProvider
             .state('countrieView', {
-                url: '/countrie-view',
-                template: '<countrie-view></countrie-view>'
+                url: '/countrie-view/:countrieName',
+                template: '<countrie-view></countrie-view>',
+                patams:{
+                    countrieName:null
+                }
             });
     }
 
     function countrieView() {
         var directive = {
-            templateUrl: './states//countrie-view.html',
+            templateUrl: './states/countrie-view/countrie-view.html',
             restrict: 'E',
             controller: controller,
             scope: {}
@@ -26,8 +29,15 @@
         return directive;
     }
 
-    controller.$inject = ['$scope', ];
-    function controller($scope, survey) {
+    controller.$inject = ['$scope','$stateParams', 'countriesInfo', 'countriesViewService' ];
+    function controller($scope, $stateParams, countriesInfo, countriesViewService) {
+        $scope.countries = countriesInfo.data;
+        
+        countriesViewService.getCountrieInfoData ($stateParams)
+            .then( function(result) {
+                    $scope.countrieInfoData = result;
+        });
+       
 
     }
 

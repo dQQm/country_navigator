@@ -1,0 +1,33 @@
+<div class="jumbotron">
+	<div class="content" ng-repeat="countrieInfo in countrieInfoData ">
+		<h1 name="countrie-name">{{countrieInfo.countryName}}</h1>
+		<div class="row">
+			<div class="col-md-7">
+				<div class="col-md-6">
+					<img class="flag" ng-src="{{countrieInfo.flagUrl}}"/>
+				</div>
+				<h3><span>Description </span></h3>
+				<p class="description">{{countrieInfo.description}}</p>
+				<ul><h3><span>Recomendations</span></h3>
+					<li ng-repeat="recomendations in countrieInfo.recomendations">
+						{{recomendations}}
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-5">
+				<p><span>Capital name</span> :{{countrieInfo.capitalName}}</p>
+				<p><span>Language</span>:{{countrieInfo.language}}</p>
+				<div id="currency">
+				<p><span>Currency</span> :{{countrieInfo.currency}}</p> 
+				<currency-calculator>
+				</currency-calculator>
+				</div>
+				<p><span>Population</span> :{{countrieInfo.population}}</p>
+				<p><span>Size</span> :{{countrieInfo.size}} km <sup>2</sup></p>
+				<map zoom="6" center="[{{countrieInfo.lat}}, {{countrieInfo.lan}}]">
+				<marker position="[{{countrieInfo.lat}}, {{countrieInfo.lan}}]" animation="Animation.BOUNCE"></marker>
+				</map>
+			</div>
+		</div>
+	</div>
+</div>

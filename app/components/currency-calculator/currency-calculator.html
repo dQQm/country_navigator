@@ -1,0 +1,24 @@
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Calculator</button>
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+	<div class="modal-dialog">
+		
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Currency Calculator</h4>
+			</div>
+			<div class="modal-body">
+				<span>Quantity</span><input type="number" ng-model="vm.data.quantity" required>
+				<span>From </span><select ng-options="from as from for from in from track by from" ng-model="vm.data.selectFrom" required></select>
+				<span>To</span> <select ng-options="to as to for to in to track by to" ng-model="vm.data.selectTo" required></select>
+				<button type="button" class="btn .btn-primary" ng-click="convertIt(vm.data.quantity, vm.data.selectFrom, vm.data.selectTo)">Convert</button>
+				
+				<P>Result: {{result.result + ' ' + result.to}}</P>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+

@@ -1,0 +1,52 @@
+form-state {
+
+	#addon {
+		background-color: #e6fcff;
+	}
+
+	#notEmpty {
+		width: 98%;
+	}
+
+	input.ng-valid + span::after {
+		content: "\2713";
+		color: limegreen;
+	}
+
+	input.ng-invalid + span::after {
+		content: "X";
+		color: #ce0000;
+	}
+
+	#star {
+		color: red;
+	}
+
+	p {
+		color: red;
+		font-weight: bold;	
+	}
+
+	input.ng-invalid, input.input-invalid {
+		border-color: red;
+		background-color: #ffffcc;
+	}
+
+	input.input-invalid {
+		border-color: red !important;
+		background-color: #ffffcc !important;
+	}
+
+	input.ng-valid {
+		border-color: lightgreen;
+	}
+
+	input.ng-untouched {
+		border-color: lightgrey;
+		background-color: white;
+	}
+}
+
+
+
+
